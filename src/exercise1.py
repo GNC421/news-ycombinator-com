@@ -23,10 +23,23 @@ def filterByTitle(array:list):
             result.append(index)
     return result
 
+#definition of sort's criteria
+def MyCriteria(e):
+    if 'descendants' in e:
+        return e['descendants']
+    return 0
+
+#order by number of comments
+def sortByComments(result):
+    result.sort(key=MyCriteria)
+    return result
 
 def main():
     array = get30Entries()
     arrFiltered = filterByTitle(array)
+    result = sortByComments(arrFiltered)
+    #Here we have the first exercise's result
+    print(result)
 
 
 if __name__ == '__main__':
