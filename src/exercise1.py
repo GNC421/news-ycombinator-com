@@ -15,9 +15,18 @@ def get30Entries():
 
     return array
 
+#filter by title
+def filterByTitle(array:list):
+    result = []
+    for index in array:
+        if len(index['title'].split())>5:
+            result.append(index)
+    return result
+
 
 def main():
     array = get30Entries()
+    arrFiltered = filterByTitle(array)
 
 
 if __name__ == '__main__':
